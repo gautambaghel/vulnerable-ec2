@@ -113,9 +113,4 @@ resource "aws_instance" "ec2" {
 #    encrypted = true
 #  }
 
-
-}
-
-output "ec2_url" {
-  value = aws_instance.ec2.public_dns
 }
