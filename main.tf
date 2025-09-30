@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source = "hashicorp/aws"
-      version = "4.28.0"
+      version = "6.14.1"
     }
   }
 }
@@ -104,4 +104,10 @@ resource "aws_instance" "ec2" {
 #    encrypted = true
 #  }
 
+}
+
+action "aws_ec2_stop_instance" "ec2_stop" {
+  config {
+    instance_id = aws_instance.ec2.id
+  }
 }
